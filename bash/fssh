@@ -1,2 +1,5 @@
-#!bin/bash
+#!/bin/bash
+
+ssh $1
+
 
