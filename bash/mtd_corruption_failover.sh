@@ -10,7 +10,7 @@ SYNC_PATH="/sys/devices/RAIDIX/RAIDIXdevice0/parameters/sync"
 
 check_ro() {
 	RO_STATE=$(<${RO_PATH})
-	echo $RO_STATE | tee -a $LOG
+	echo $RO_STATE 
 	if (( RO_STATE == 1 )); then
 		echo "Reach read only state"
 		exit 1
@@ -42,7 +42,7 @@ while true; do
 		sleep 31
 	else
 
-		## Set ssh to executing commands remotely 
+		## Set ssh to execute commands remotely 
 		
 		# if [[ "ssh $PASSIVE cat $SYNC_PATH" != "Starting" ]]; then
 		# 	rdcli raid reload -n $RAID_NAME -f
